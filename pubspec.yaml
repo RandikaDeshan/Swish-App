@@ -115,6 +115,7 @@ flutter:
     - assets/icons/
     - assets/mood_tracker/
     - assets/coloring_screen/
+    - assets/home_page/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
