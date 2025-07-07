@@ -12,6 +12,16 @@ class CalibrationNewThree extends StatefulWidget {
 }
 
 class _CalibrationNewThreeState extends State<CalibrationNewThree> {
+
+  int selectedNo = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedNo = 0;
+  }
+
   final List<SongModel> songs = [
     SongModel(name: "Life of Hope", image: "assets/calibration/song1.png", author: "Leo Mano", ispro: false,isselected: false),
     SongModel(name: "Walking on Sunshine", image: "assets/calibration/song2.png", author: "Katrina", ispro: false,isselected: false),
@@ -77,19 +87,19 @@ class _CalibrationNewThreeState extends State<CalibrationNewThree> {
                               final song = songs[index];
                               return InkWell(
                                   onTap: () {
-                                    if(song.isselected!){
+                                    if(selectedNo == index){
                                       setState(() {
-                                        song.isselected = false;
+                                        selectedNo = 0;
                                       });
                                     }else{
                                       setState(() {
-                                        song.isselected = true;
+                                        selectedNo = index;
                                       });
                                     }
                                   },
                                   child: Padding(
                                     padding: EdgeInsets.only(bottom: 9.h),
-                                    child: SelectMusicCard(image: song.image, name: song.name, author:song.author,ispro: song.ispro, selected: song.isselected!,),
+                                    child: SelectMusicCard(image: song.image, name: song.name, author:song.author,ispro: song.ispro, selected: selectedNo == index? true : false,),
                                   ));
                             },),
                           ),

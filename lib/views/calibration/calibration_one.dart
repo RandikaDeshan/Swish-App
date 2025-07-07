@@ -11,6 +11,16 @@ class CalibrationOne extends StatefulWidget {
 }
 
 class _CalibrationOneState extends State<CalibrationOne> {
+
+  int selectedNo = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedNo = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -54,38 +64,51 @@ class _CalibrationOneState extends State<CalibrationOne> {
           child: Column(
             children: [
               Expanded(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  margin: EdgeInsets.symmetric(vertical: 10.h),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: Colors.white,
-                        width: 2.w,
-                      ),
-                      borderRadius: BorderRadius.circular(10.r)
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Beginner',
-                        style: TextStyle(
-                          color: Color(0xff9737FF),
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.bold,
+                child: InkWell(
+                  onTap: () {
+                    if(selectedNo == 0){
+                      setState(() {
+                        selectedNo = 1;
+                      });
+                    }else{
+                      setState(() {
+                        selectedNo = 0;
+                      });
+                    }
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                    margin: EdgeInsets.symmetric(vertical: 10.h),
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: selectedNo == 1? Colors.white:Colors.red,
+                          width: 2.w,
                         ),
-                      ),
-                      Text(
-                        'Perfect for beginners to get started.',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.bold,
+                        borderRadius: BorderRadius.circular(10.r)
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Beginner',
+                          style: TextStyle(
+                            color: Color(0xff9737FF),
+                            fontSize: 18.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      )
-                    ],
+                        Text(
+                          'Perfect for beginners to get started.',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),

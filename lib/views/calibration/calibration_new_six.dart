@@ -2,8 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CalibrationNewSix extends StatelessWidget {
+class CalibrationNewSix extends StatefulWidget {
   const CalibrationNewSix({super.key});
+
+  @override
+  State<CalibrationNewSix> createState() => _CalibrationNewSixState();
+}
+
+class _CalibrationNewSixState extends State<CalibrationNewSix> {
+
+  int selectedNo = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedNo = 0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -66,17 +81,101 @@ class CalibrationNewSix extends StatelessWidget {
                             SizedBox(height: 20.h,),
                             Row(
                               children: [
-                                Expanded(child: Image.asset("assets/calibration/relaxed.png")),
+                                Expanded(child: InkWell(
+                                  onTap: () {
+                                    if(selectedNo == 1){
+                                      setState(() {
+                                        selectedNo = 0;
+                                      });
+                                    }else{
+                                      setState(() {
+                                        selectedNo = 1;
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(
+                                              color: selectedNo == 1 ? Colors.white : Colors.transparent,
+                                              width: 2
+                                          )
+                                      ),
+                                      child: Image.asset("assets/calibration/relaxed.png",fit: BoxFit.cover,)),
+                                )),
                                 SizedBox(width: 15.w,),
-                                Expanded(child: Image.asset("assets/calibration/focus.png")),
+                                Expanded(child: InkWell(
+                                  onTap: () {
+                                    if(selectedNo == 2){
+                                      setState(() {
+                                        selectedNo = 0;
+                                      });
+                                    }else{
+                                      setState(() {
+                                        selectedNo = 2;
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(
+                                              color: selectedNo == 2 ? Colors.white : Colors.transparent,
+                                              width: 2
+                                          )
+                                      ),
+                                      child: Image.asset("assets/calibration/focus.png",fit: BoxFit.cover,)),
+                                )),
                               ],
                             ),
                             SizedBox(height: 15.h,),
                             Row(
                               children: [
-                                Expanded(child: Image.asset("assets/calibration/energy.png")),
+                                Expanded(child: InkWell(
+                                  onTap: () {
+                                    if(selectedNo == 3){
+                                      setState(() {
+                                        selectedNo = 0;
+                                      });
+                                    }else{
+                                      setState(() {
+                                        selectedNo = 3;
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(
+                                              color: selectedNo == 3 ? Colors.white : Colors.transparent,
+                                              width: 2
+                                          )
+                                      ),
+                                      child: Image.asset("assets/calibration/energy.png",fit: BoxFit.cover,)),
+                                )),
                                 SizedBox(width: 15.w,),
-                                Expanded(child: Image.asset("assets/calibration/lazy.png")),
+                                Expanded(child: InkWell(
+                                  onTap: () {
+                                    if(selectedNo == 4){
+                                      setState(() {
+                                        selectedNo = 0;
+                                      });
+                                    }else{
+                                      setState(() {
+                                        selectedNo = 4;
+                                      });
+                                    }
+                                  },
+                                  child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(
+                                              color: selectedNo == 4 ? Colors.white : Colors.transparent,
+                                              width: 2
+                                          )
+                                      ),
+                                      child: Image.asset("assets/calibration/lazy.png",fit: BoxFit.cover,)),
+                                )),
                               ],
                             ),
                             SizedBox(height: 69.h,),

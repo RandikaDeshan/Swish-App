@@ -2,8 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class CalibrationNewOne extends StatelessWidget {
+class CalibrationNewOne extends StatefulWidget {
   const CalibrationNewOne({super.key});
+
+  @override
+  State<CalibrationNewOne> createState() => _CalibrationNewOneState();
+}
+
+class _CalibrationNewOneState extends State<CalibrationNewOne> {
+  int selectedNo = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedNo = 0;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,98 +84,137 @@ class CalibrationNewOne extends StatelessWidget {
                   padding:  EdgeInsets.symmetric(horizontal: 20.w),
                   child: Column(
                     children: [
-                      Container(
-                        height: 95.h,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: Colors.white,
-                            width: 2
-                          )
+                      InkWell(
+                        onTap:(){
+                          if(selectedNo == 1){
+                            setState(() {
+                              selectedNo = 0;
+                            });
+                          }else{
+                            setState(() {
+                              selectedNo = 1;
+                            });
+                          }
+                        },
+                        child: Container(
+                          height: 95.h,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: selectedNo == 1 ? Colors.white : Color.fromRGBO(151, 55, 255, 1),
+                              width: 2
+                            )
+                          ),
+                          child: Padding(
+                            padding:  EdgeInsets.only(left: 36.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Beginner",style: TextStyle(
+                                    fontSize: 16.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xFF9737FF),
+                                ),),
+                                SizedBox(height: 3.h,),
+                                Text("Perfect for beginners to get started.",style: TextStyle(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),),
+                              ],
+                            ),
+                          ),
                         ),
-                        child: Padding(
-                          padding:  EdgeInsets.only(left: 36.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Beginner",style: TextStyle(
+                      ),
+                      SizedBox(height: 20.h,),
+                      InkWell(
+                        onTap:(){
+                          if(selectedNo == 2){
+                            setState(() {
+                              selectedNo = 0;
+                            });
+                          }else{
+                            setState(() {
+                              selectedNo = 2;
+                            });
+                          }
+                        },
+                        child: Container(
+                          height: 95.h,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                  color: selectedNo == 2 ? Colors.white : Color.fromRGBO(151, 55, 255, 1),
+                                  width: 2
+                              )
+                          ),
+                          child: Padding(
+                            padding:  EdgeInsets.only(left: 36.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Intermediate",style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w700,
                                   color: Color(0xFF9737FF),
-                              ),),
-                              SizedBox(height: 3.h,),
-                              Text("Perfect for beginners to get started.",style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),),
-                            ],
+                                ),),
+                                SizedBox(height: 3.h,),
+                                Text("For those with some experience.",style: TextStyle(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),),
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       SizedBox(height: 20.h,),
-                      Container(
-                        height: 95.h,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color: Colors.white,
-                                width: 2
-                            )
-                        ),
-                        child: Padding(
-                          padding:  EdgeInsets.only(left: 36.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Intermediate",style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFF9737FF),
-                              ),),
-                              SizedBox(height: 3.h,),
-                              Text("For those with some experience.",style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),),
-                            ],
+                      InkWell(
+                        onTap:(){
+                          if(selectedNo == 3){
+                            setState(() {
+                              selectedNo = 0;
+                            });
+                          }else{
+                            setState(() {
+                              selectedNo = 3;
+                            });
+                          }
+                        },
+                        child: Container(
+                          height: 95.h,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                  color: selectedNo == 3 ? Colors.white : Color.fromRGBO(151, 55, 255, 1),
+                                  width: 2
+                              )
                           ),
-                        ),
-                      ),
-                      SizedBox(height: 20.h,),
-                      Container(
-                        height: 95.h,
-                        width: MediaQuery.of(context).size.width,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                                color: Colors.white,
-                                width: 2
-                            )
-                        ),
-                        child: Padding(
-                          padding:  EdgeInsets.only(left: 36.w),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Expert",style: TextStyle(
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFF9737FF),
-                              ),),
-                              SizedBox(height: 3.h,),
-                              Text("Challenge yourself at the highest level.",style: TextStyle(
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.white,
-                              ),),
-                            ],
+                          child: Padding(
+                            padding:  EdgeInsets.only(left: 36.w),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Expert",style: TextStyle(
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xFF9737FF),
+                                ),),
+                                SizedBox(height: 3.h,),
+                                Text("Challenge yourself at the highest level.",style: TextStyle(
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
+                                ),),
+                              ],
+                            ),
                           ),
                         ),
                       ),
