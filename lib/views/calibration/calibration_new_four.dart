@@ -38,6 +38,7 @@ class CalibrationNewFour extends StatelessWidget {
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
                           padding:  EdgeInsets.only(left: 25.w,top: 45.h),
