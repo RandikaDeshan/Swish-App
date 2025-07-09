@@ -45,88 +45,103 @@ class _CalibrationNewThreeState extends State<CalibrationNewThree> {
             stops: [0.0, 1.0],
           ),
         ),
-        child: Stack(
-            fit: StackFit.expand,
-            children:[
-              Positioned(
-                  top: 100,
-                  left: 0,
-                  right: 0,
-                  child: SvgPicture.asset("assets/calibration/Union.svg", width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height, fit:BoxFit.cover,)),
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:  EdgeInsets.only(left: 25.w,top: 53.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Select your ",style: TextStyle(
-                              fontSize: 32.sp,
-                              fontWeight: FontWeight.w700,
-                              color: Colors.white
-                          ),),
-                          Text("music",style: TextStyle(
-                            fontSize: 32.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Color(0xFF9737FF),
-                          ),),
-                        ],
-                      ),
+        child: SafeArea(
+          child: Stack(
+              fit: StackFit.expand,
+              children:[
+                Positioned(
+                    top: 100,
+                    left: 0,
+                    right: 0,
+                    child: SvgPicture.asset("assets/calibration/Union.svg", width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height, fit:BoxFit.cover,)),
+                SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: MediaQuery.of(context).size.height
                     ),
-                    Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 20.w),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 20.h,),
-                          SizedBox(
-                            height: 450.h,
-                            child: ListView.builder(itemCount: songs.length,itemBuilder: (context, index) {
-                              final song = songs[index];
-                              return InkWell(
-                                  onTap: () {
-                                    if(selectedNo == index){
-                                      setState(() {
-                                        selectedNo = 0;
-                                      });
-                                    }else{
-                                      setState(() {
-                                        selectedNo = index;
-                                      });
-                                    }
-                                  },
-                                  child: Padding(
-                                    padding: EdgeInsets.only(bottom: 9.h),
-                                    child: SelectMusicCard(image: song.image, name: song.name, author:song.author,ispro: song.ispro, selected: selectedNo == index? true : false,),
-                                  ));
-                            },),
-                          ),
-                          SizedBox(height: 40.h,),
-                          TextButton(
-                              onPressed: (){
-                                Navigator.pushNamed(context, '/calibrationThree');
-                              },
-                              style: TextButton.styleFrom(
-                                  backgroundColor: Color(0xFF9654FE),
-                                  fixedSize: Size(MediaQuery.of(context).size.width, 45.h),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(24),
-                                  )
-                              ),
-                              child: Text("Next",style: TextStyle(
-                                  fontSize: 14.sp,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding:  EdgeInsets.only(left: 25.w,top: 45.h),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Select your ",style: TextStyle(
+                                  fontSize: 32.sp,
                                   fontWeight: FontWeight.w700,
                                   color: Colors.white
-                              ),)),
-                          SizedBox(height: 20.h,)
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),]
+                              ),),
+                              Text("music",style: TextStyle(
+                                fontSize: 32.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF9737FF),
+                              ),),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:  EdgeInsets.symmetric(horizontal: 20.w),
+                          child: Column(
+                            children: [
+                              SizedBox(height: 20.h,),
+                              SizedBox(
+                                height: 450.h,
+                                child: ListView.builder(itemCount: songs.length,itemBuilder: (context, index) {
+                                  final song = songs[index];
+                                  return InkWell(
+                                      onTap: () {
+                                        if(selectedNo == index){
+                                          setState(() {
+                                            selectedNo = 0;
+                                          });
+                                        }else{
+                                          setState(() {
+                                            selectedNo = index;
+                                          });
+                                        }
+                                      },
+                                      child: Padding(
+                                        padding: EdgeInsets.only(bottom: 9.h),
+                                        child: SelectMusicCard(image: song.image, name: song.name, author:song.author,ispro: song.ispro, selected: selectedNo == index? true : false,),
+                                      ));
+                                },),
+                              ),
+                              SizedBox(height: 40.h,),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          child: Column(
+                            children: [
+                              TextButton(
+                                  onPressed: (){
+                                    Navigator.pushNamed(context, '/calibrationThree');
+                                  },
+                                  style: TextButton.styleFrom(
+                                      backgroundColor: Color(0xFF9654FE),
+                                      fixedSize: Size(MediaQuery.of(context).size.width, 45.h),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(24),
+                                      )
+                                  ),
+                                  child: Text("Next",style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: Colors.white
+                                  ),)),
+                              SizedBox(height: 80.h,)
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),]
+          ),
         ),
       ),
     );

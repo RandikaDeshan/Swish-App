@@ -78,7 +78,7 @@ class _SelectMusicCardState extends State<SelectMusicCard> {
           Padding(
             padding:  EdgeInsets.only(right: 25.w),
             child: IconButton(onPressed: (){
-            }, icon: Icon(!widget.ispro! ? widget.selected ? Icons.pause_circle:Icons.play_circle : Icons.play_circle,color: Colors.white,size: 40)),
+            }, icon: Icon(Icons.play_circle ,color: Colors.white,size: 40)),
           )
         ],
       ),

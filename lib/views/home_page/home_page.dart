@@ -138,7 +138,7 @@ class _HomePageState extends State<HomePage> {
                                 no = 1;
                               });
                             }
-                          }, icon: no == 0 ? Icon(Icons.menu,color: Colors.white, size: 20,):SvgPicture.asset("assets/home_page/Group.svg",width: 15.w,height: 15.h,)),
+                          }, icon: no == 0 ? Icon(Icons.menu,color: Colors.white, size: 30,):SvgPicture.asset("assets/home_page/Group.svg",width: 20.w,height: 20.h,)),
                         ],
                       ),
                     ),

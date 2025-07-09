@@ -40,105 +40,105 @@ class _RegisterScreenState extends State<RegisterScreen> {
             children: [
               MusicImage(),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 50.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //text
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            //text
-                            Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'Sign',
-                                    style: TextStyle(
-                                      color: Color(0xff9654FE),
-                                      fontSize: 32.sp,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                padding: EdgeInsets.only(left: 25.w,right: 25.w,top: 45.h),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //text
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          //text
+                          Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Sign',
+                                  style: TextStyle(
+                                    color: Color(0xff9654FE),
+                                    fontSize: 32.sp,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                  TextSpan(
-                                    text: ' up',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 32.sp,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                ),
+                                TextSpan(
+                                  text: ' up',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 32.sp,
+                                    fontWeight: FontWeight.bold,
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
+                          ),
 
-                            SizedBox(height: 20.h),
+                          SizedBox(height: 20.h),
 
-                            // Fist name input
-                            RegisterTextField(title: 'First Name ', hintText: 'First Name',),
+                          // Fist name input
+                          RegisterTextField(title: 'First Name ', hintText: 'First Name',),
 
-                            SizedBox(height: 20.h),
+                          SizedBox(height: 20.h),
 
-                            // Last name input
-                            RegisterTextField(title: 'Last Name ', hintText: 'Last Name',),
+                          // Last name input
+                          RegisterTextField(title: 'Last Name ', hintText: 'Last Name',),
 
-                            SizedBox(height: 15.h),
+                          SizedBox(height: 15.h),
 
-                            //email
-                            RegisterTextField(title: 'Email ', hintText: 'example@gmail.com',),
+                          //email
+                          RegisterTextField(title: 'Email ', hintText: 'example@gmail.com',),
 
-                            SizedBox(height: 15.h),
+                          SizedBox(height: 15.h),
 
-                            //password
-                            PasswordTextField(isPasswordVisible: true, title: 'Password ', hintText: 'Password ',),
+                          //password
+                          PasswordTextField(isPasswordVisible: true, title: 'Password ', hintText: 'Password ',),
 
-                            SizedBox(height: 15.h),
+                          SizedBox(height: 15.h),
 
-                            //confirm password
-                            PasswordTextField(isPasswordVisible: true, title: 'Confirm Password ', hintText: 'Confirm Password ',),
+                          //confirm password
+                          PasswordTextField(isPasswordVisible: true, title: 'Confirm Password ', hintText: 'Confirm Password ',),
 
-                          ],
-                        ),
+                        ],
                       ),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Already have an account? ",style:TextStyle(
-                              color: Colors.white,
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.bold,
-                            ),),
-                            InkWell(
-                              onTap: (){
-                                Navigator.pushNamed(context, '/login');
-                              },
-                              child: Text("Login",style:TextStyle(
-                                color: Color(0xff9654FE),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(height: 38.h,),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Already have an account? ",style:TextStyle(
+                                color: Colors.white,
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.bold,
                               ),),
-                            ),
-                          ],
-                        ),
-
-
-                        SizedBox(height: 10.h),
-
-                        Button(
-                          title: "Sign Up",
-                          onTap: (){
-                            Navigator.pushReplacementNamed(context, '/calibration');
-                          },
-                        ),
-                      ],
-                    )
-                  ],
+                              InkWell(
+                                onTap: (){
+                                  Navigator.pushNamed(context, '/login');
+                                },
+                                child: Text("Login",style:TextStyle(
+                                  color: Color(0xff9654FE),
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),),
+                              ),
+                            ],
+                          ),
+                  
+                  
+                          SizedBox(height: 10.h),
+                  
+                          Button(
+                            title: "Sign Up",
+                            onTap: (){
+                              Navigator.pushReplacementNamed(context, '/calibration');
+                            },
+                          ),
+                          SizedBox(height: 50.h,)
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],
